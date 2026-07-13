@@ -1,0 +1,110 @@
+.movie-card {
+	background: #1a1a1a;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 18px 40px rgba(255, 140, 0, 0.22);
+}
+
+.poster-wrap {
+	position: relative;
+	aspect-ratio: 2 / 3;
+	background: #111;
+	overflow: hidden;
+}
+
+.movie-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.poster-wrap::after {
+	position: absolute;
+	inset: auto 0 0;
+	height: 34%;
+	content: '';
+	background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+}
+
+.top-badge {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	z-index: 2;
+	border-radius: 0 999px 999px 0;
+	background: #ff1f5a;
+	color: #fff;
+	padding: 7px 12px;
+	font-size: 14px;
+	font-weight: 900;
+}
+
+.service-badge,
+.age-badge {
+	position: absolute;
+	z-index: 2;
+	bottom: 10px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 900;
+}
+
+.service-badge {
+	left: 10px;
+	width: 26px;
+	height: 26px;
+	border-radius: 8px;
+	background: #ff0f4f;
+	color: #fff;
+	font-size: 20px;
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+
+.age-badge {
+	right: 10px;
+	min-width: 28px;
+	height: 22px;
+	border-radius: 999px;
+	background: rgba(0, 0, 0, 0.48);
+	color: rgba(255, 255, 255, 0.72);
+	font-size: 12px;
+}
+
+.movie-info {
+	min-height: 132px;
+	padding: 16px 14px 18px;
+}
+
+.movie-card h3 {
+	font-size: clamp(19px, 2vw, 26px);
+	line-height: 1.16;
+	margin: 0 0 26px;
+	color: white;
+}
+
+.movie-card p {
+	margin: 0;
+	color: #f5a623;
+	font-weight: 600;
+}
+
+@media (max-width: 640px) {
+	.movie-info {
+		min-height: 104px;
+		padding: 12px;
+	}
+
+	.movie-card h3 {
+		font-size: 18px;
+		margin-bottom: 16px;
+	}
+}
